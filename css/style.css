@@ -1,0 +1,236 @@
+/* Fonts import */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Roboto+Slab:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+/* Setup Variables */
+
+:root {
+/* color */
+  --gray-50:rgb(124, 124, 124);
+  --gray-56:rgb(56, 56, 56);
+  --gray-206:rgb(206, 206, 206);
+
+/* fonts */
+  --font-OpenSans: 'Open Sans', sans-serif;
+  --font-star-wars: 'Franklin Gothic Medium';
+}
+
+/* Some basic Reset */
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /*now 1.5rem = 15px*/
+  font-family: var(--font-star-wars);
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a{
+  cursor: pointer;
+  color: inherit;
+  list-style: inherit;
+  text-decoration: inherit;
+}
+
+/*======================| Html |===========================*/
+
+
+body{
+    width: auto;
+    height: 100vh;
+    background: url(../images/stars.jpg) no-repeat center center; 
+    background-size:cover;  
+    background-attachment: fixed;
+    overflow: hidden;
+    
+}
+
+.box-audio{
+    position: absolute;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    margin: 0 auto;
+    height: 10vh;
+    width: 100vw;
+    z-index: 4;
+}
+
+audio{
+    margin: 5vh;
+    height: 20px;
+    width: 100px;
+}
+
+
+.long-time-ago{
+    font-size: 3rem;
+    font-weight: 100;
+    color: rgba(10,118,135,1);
+    
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    background-color: black;
+    
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+
+    opacity: 1;
+}
+
+.logo{
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img{
+    width: 100vw;
+    height: auto;
+}
+
+.container-credits{
+    width: 31%;
+    height: 100vh;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1{
+    font-size: 5rem;
+    line-height: 8rem;
+    color: rgba(255,186,7,1);
+    white-space: pre-line;
+
+    margin:0 auto;
+    padding-bottom: 50px;
+}
+
+.intro-text{
+    font-size: 4rem;
+    text-align: justify;
+    color: rgba(255,186,7,1);   
+}
+
+
+
+/*======================| Animations |===========================
+=================================================================*/
+
+
+/*======================| A long time ago |===========================*/
+
+.long-time-ago > h2{
+    animation-name: long-time-ago;
+    animation-delay: 3s;
+    animation-duration: 8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    transition-timing-function:ease-in-out;
+}
+
+@keyframes long-time-ago{
+    0%,100% {color: rgba(10,118,135,0);}
+  
+    50% {color: rgba(10,118,135,1);}
+} 
+
+.long-time-ago {
+    animation-name: fadeIn;
+    animation-delay: 11s;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function:step-start;
+}
+
+@keyframes fadeIn{
+    0% { opacity: 1; }
+  
+    100% {opacity: 0;}
+}
+
+/*======================| Logo Star Wars |===========================*/
+
+.logo img{
+    animation-name: logo-anim;
+    animation-delay: 11.5s;
+    animation-duration: 20s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    transition-timing-function:linear;
+}
+
+@keyframes logo-anim{
+    0% {width: 100vw;}
+  
+    100% {width: 0vw;}
+} 
+
+/*======================| Credits |===========================*/
+
+
+.container-credits .text{
+    animation-name: credits;
+    animation-delay: 20s;
+    animation-duration: 140s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    transition-timing-function:linear;
+
+}
+
+@keyframes credits{
+    0% {transform: translateY(700px);}
+  
+    100% {transform: translateY(-2400px);}
+} 
+
+.container-credits{
+    transform: perspective(250px) rotatex(60deg);
+}
+
+.container-credits .text{
+    transform: translateY(700px);  
+}
+
+.long-time-ago{
+    position: absolute;
+    z-index: 3;
+}
+.logo{
+    position: absolute;
+    z-index: 2;
+}
+.container-credits{
+    z-index: 1;
+}
+
+
+
+
