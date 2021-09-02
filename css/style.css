@@ -82,7 +82,7 @@ audio{
 .long-time-ago{
     font-size: 3rem;
     font-weight: 100;
-    color: rgba(10,118,135,1);
+    color: rgba(10,118,135,0);
     
     
     display: flex;
